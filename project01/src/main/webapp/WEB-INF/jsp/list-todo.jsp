@@ -1,0 +1,39 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<html>
+    <head>
+    <link href="webjars/bootstrap/4.6.0/css/bootstrap.min.css"
+    	rel="stylesheet">
+    <title>TODOS</title>
+    </head>
+    <body>
+      <div class="container">
+      <h1 class="h1 black">${username} Your Todos</h1>
+              <table class="table table-striped">
+                  <caption>Your TODOS :(</caption>
+                  <thead>
+                      <tr>
+                          <th>Description</th>
+                          <th>Date</th>
+                          <th>Is it Done?</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <c:forEach items="${todos}" var="todo">
+                          <tr>
+                              <td>${todo.desc}</td>
+                              <td>${todo.targetDate}</td>
+                              <td>${todo.done}</td>
+                              <td><a class="btn btn-danger" href="/delete-todo?id=${todo.id}">Delete</a></td>
+                          </tr>
+                      </c:forEach>
+                  </tbody>
+              </table>
+              <form method="post">
+                  <input class="input" name="desc" type="text"/>
+                  <button class="btn btn-success"type="submit">Add</button>
+              </form>
+      </div>
+        <script src="webjars/jquery/3.5.1/dist/jquery.min.js"></script>
+        <script src="webjars/bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    </body>
+</html>

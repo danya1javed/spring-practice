@@ -20,7 +20,7 @@ public class TodoService {
             false));
   }
 
-//  retrieveTODO
+//  retrieveTODOS
   public List<Todo> retrieveTodos (String user){
     System.out.println( todoDB
             .stream()
@@ -30,6 +30,11 @@ public class TodoService {
             .stream()
             .filter(obj -> obj.getUser().equalsIgnoreCase(user))
             .collect(Collectors.toList());
+  }
+
+//  Retrieve Single "0Todo"
+  public Todo retrieveTodo(int id) {
+    return todoDB.stream().filter(todo -> todo.getId() == id).findFirst().orElse(null);
   }
 
 //  addTODO
@@ -46,4 +51,16 @@ public class TodoService {
   public void deleteTodo (int id){
     todoDB.removeIf(todo -> todo.getId() == id);
   }
+
+//  EditTODO
+  public void updateTODO(Todo todo) {
+//    todoDB.stream()
+//          .filter(todo -> todo.getId() == id)
+//          .collect(Collectors.toList())
+//          .get(0)
+//          .setDesc(newDesc);
+    todoDB.remove(todo.getId() - 1);
+    todoDB.add(todo);
+  }
+
 }

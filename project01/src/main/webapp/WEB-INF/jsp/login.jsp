@@ -1,14 +1,10 @@
-<html>
-    <head>
-        <title>Login</title>
-    </head>
-    <body>
-        <h1>Login</h1>
-        <font color="red">Invalid Credentials</font>
-        <form method="post">
-            Username: <input name="username" type="text" />
-            Password: <input name="password" type="password" />
-            <button type="submit">Sign in</button>
-        </form>
-    </body>
-</html>
+<%@ include file="common/header.jspf" %>
+<div class="container">
+	<font color="red">${errorMessage}</font>
+	<form method="post">
+		Name : <input type="text" name="username" />
+		Password : <input type="password" name="password" />
+		<input type="submit" />
+	</form>
+</div>
+<%@ include file="common/footer.jspf" %>

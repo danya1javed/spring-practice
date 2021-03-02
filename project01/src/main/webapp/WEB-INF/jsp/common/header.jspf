@@ -1,0 +1,14 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+
+<html>
+<head>
+  <title>T0D0</title>
+  <link href="webjars/bootstrap/4.6.0/css/bootstrap.min.css"
+	rel="stylesheet">
+	<link href="webjars/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css"
+  	rel="stylesheet">
+</head>
+
+<body>

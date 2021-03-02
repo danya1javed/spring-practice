@@ -2,8 +2,9 @@
 <%@ include file="common/navigation.jspf" %>
 
 <div class="container">
-   <h1>Welcome - ${username}</h1>
-    <hr/>
-    <a href="/list-todos">Click Here! - To see your todos</a>
+  <h3>Error</h3>
+  <hr/>
+  <h4>An exception occurred! Please contact Support!</h4>
+  <h4>${exception}</h4>
 </div>
 <%@ include file="common/footer.jspf" %>

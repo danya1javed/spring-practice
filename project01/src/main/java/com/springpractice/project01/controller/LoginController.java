@@ -1,14 +1,10 @@
 package com.springpractice.project01.controller;
 
-import com.springpractice.project01.service.LoginService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
-import sun.plugin.liveconnect.SecurityContextHelper;
 
 @Controller
 @SessionAttributes("username")
@@ -23,6 +19,13 @@ public class LoginController {
 //  LoginService service;
 
   private String getLoggedInUser (){
+    /*
+      Spring Security Context - This is where the details of the currently authenticated user are stored
+                                on successful authentication.  we need to get the SecurityContext first.
+                                This is done with the SecurityContextHolder
+
+    */
+
     Object Principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
     if(Principal instanceof UserDetails){
       return ((UserDetails) Principal).getUsername();

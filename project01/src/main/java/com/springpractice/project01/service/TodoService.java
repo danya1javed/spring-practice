@@ -13,10 +13,11 @@ public class TodoService {
   private static List<Todo> todoDB = new ArrayList<Todo>();
 
   static {
-    todoDB.add(new Todo(1, "in28Minutes", "Learn Spring MVC", new Date(),
+    todoDB.add(new Todo(1, "timcook", "Learn Hibernate", new Date(),
             false));
-    todoDB.add(new Todo(2, "in28Minutes", "Learn Struts", new Date(), false));
-    todoDB.add(new Todo(3, "timcook", "Learn Hibernate", new Date(),
+    todoDB.add(new Todo(2, "timo", "Learn Spring security", new Date(),
+            false));
+    todoDB.add(new Todo(2, "timo", "Learn Postgres", new Date(),
             false));
   }
 
